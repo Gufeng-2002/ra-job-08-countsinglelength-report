@@ -1,0 +1,290 @@
+:root {
+  --report-bg-top: #edf4fb;
+  --report-bg-bottom: #f8fbfd;
+  --report-surface: #ffffff;
+  --report-surface-soft: #f7fafc;
+  --report-border: #d7e1ec;
+  --report-border-strong: #c5d2e0;
+  --report-text: #1f2937;
+  --report-muted: #607083;
+  --report-accent: #f37726;
+  --report-accent-soft: #fff4ea;
+  --report-link: #2563eb;
+  --report-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
+  --report-shadow-soft: 0 10px 28px rgba(15, 23, 42, 0.06);
+}
+
+html {
+  background: linear-gradient(180deg, var(--report-bg-top) 0%, var(--report-bg-bottom) 100%);
+}
+
+body.jp-Notebook {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(243, 119, 38, 0.12), transparent 24%),
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.10), transparent 20%),
+    linear-gradient(180deg, var(--report-bg-top) 0%, var(--report-bg-bottom) 100%);
+  color: var(--report-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  padding: 36px 0 72px;
+}
+
+body.jp-Notebook main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 28px;
+  box-sizing: border-box;
+}
+
+body.jp-Notebook .jp-Collapser,
+body.jp-Notebook .jp-InputPrompt,
+body.jp-Notebook .jp-OutputPrompt,
+body.jp-Notebook .jp-Cell-inputCollapser,
+body.jp-Notebook .jp-Cell-outputCollapser,
+body.jp-Notebook .jp-OutputArea-prompt,
+body.jp-Notebook .jp-OutputArea-promptOverlay {
+  display: none !important;
+}
+
+body.jp-Notebook .jp-Cell {
+  margin: 22px 0;
+  padding: 0;
+}
+
+body.jp-Notebook .jp-Cell-inputWrapper,
+body.jp-Notebook .jp-Cell-outputWrapper {
+  margin: 0;
+}
+
+body.jp-Notebook .jp-MarkdownCell {
+  background: var(--report-surface);
+  border: 1px solid var(--report-border);
+  border-radius: 20px;
+  box-shadow: var(--report-shadow-soft);
+  overflow: hidden;
+}
+
+body.jp-Notebook .jp-MarkdownCell .jp-InputArea {
+  padding: 24px 28px;
+}
+
+body.jp-Notebook .jp-MarkdownCell:first-of-type {
+  background:
+    linear-gradient(135deg, rgba(243, 119, 38, 0.10), rgba(37, 99, 235, 0.08)),
+    var(--report-surface);
+  border-color: rgba(243, 119, 38, 0.24);
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.10);
+}
+
+body.jp-Notebook .jp-MarkdownCell:first-of-type .jp-InputArea {
+  padding: 32px 34px;
+}
+
+body.jp-Notebook .jp-CodeCell {
+  position: relative;
+  background: var(--report-surface);
+  border: 1px solid var(--report-border);
+  border-radius: 20px;
+  box-shadow: var(--report-shadow-soft);
+  overflow: hidden;
+}
+
+body.jp-Notebook .jp-CodeCell::before {
+  content: "输出结果";
+  display: block;
+  padding: 10px 18px;
+  background: linear-gradient(180deg, #f9fbfd 0%, #f2f6fb 100%);
+  border-bottom: 1px solid var(--report-border);
+  color: var(--report-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.jp-Notebook .jp-CodeCell .jp-Cell-outputWrapper {
+  padding: 18px 20px 20px;
+}
+
+body.jp-Notebook .jp-CodeCell .jp-OutputArea,
+body.jp-Notebook .jp-CodeCell .jp-Cell-outputArea {
+  display: block;
+}
+
+body.jp-Notebook .jp-OutputArea-child + .jp-OutputArea-child {
+  margin-top: 14px;
+}
+
+body.jp-Notebook .jp-MarkdownOutput,
+body.jp-Notebook .jp-RenderedHTMLCommon,
+body.jp-Notebook .jp-RenderedHTML,
+body.jp-Notebook .jp-RenderedMarkdown {
+  color: var(--report-text);
+}
+
+body.jp-Notebook .jp-MarkdownOutput :is(h1, h2, h3, h4, h5, h6) {
+  color: #14202b;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+body.jp-Notebook .jp-MarkdownOutput h1 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+body.jp-Notebook .jp-MarkdownOutput h2 {
+  margin-top: 2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #edf2f7;
+  font-size: 1.45rem;
+}
+
+body.jp-Notebook .jp-MarkdownCell:first-of-type .jp-MarkdownOutput h2:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+body.jp-Notebook .jp-MarkdownOutput h3 {
+  font-size: 1.15rem;
+  margin-top: 1.5rem;
+}
+
+body.jp-Notebook .jp-MarkdownOutput p,
+body.jp-Notebook .jp-MarkdownOutput li {
+  font-size: 15.5px;
+}
+
+body.jp-Notebook .jp-MarkdownOutput ul,
+body.jp-Notebook .jp-MarkdownOutput ol {
+  padding-left: 1.35rem;
+}
+
+body.jp-Notebook .jp-MarkdownOutput code,
+body.jp-Notebook .jp-RenderedText code,
+body.jp-Notebook .jp-RenderedHTMLCommon code {
+  background: #f6f8fb;
+  border: 1px solid #e3eaf3;
+  border-radius: 6px;
+  padding: 0.15rem 0.45rem;
+  font-size: 0.92em;
+}
+
+body.jp-Notebook .jp-MarkdownOutput pre code,
+body.jp-Notebook .jp-OutputArea-output pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+body.jp-Notebook .jp-RenderedText pre,
+body.jp-Notebook .jp-OutputArea-output pre {
+  background: var(--report-surface-soft);
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px 16px;
+  line-height: 1.55;
+  overflow: auto;
+}
+
+body.jp-Notebook .jp-RenderedHTMLCommon {
+  overflow-x: auto;
+}
+
+body.jp-Notebook .jp-RenderedHTMLCommon table,
+body.jp-Notebook .jp-RenderedHTMLCommon table.dataframe {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 14px;
+  border: 1px solid #dbe4ee;
+}
+
+body.jp-Notebook .jp-RenderedHTMLCommon table th,
+body.jp-Notebook .jp-RenderedHTMLCommon table td,
+body.jp-Notebook .jp-RenderedHTMLCommon table.dataframe th,
+body.jp-Notebook .jp-RenderedHTMLCommon table.dataframe td {
+  border: 1px solid #e5ebf2;
+  padding: 8px 10px;
+  vertical-align: top;
+}
+
+body.jp-Notebook .jp-RenderedHTMLCommon table thead th,
+body.jp-Notebook .jp-RenderedHTMLCommon table.dataframe thead th {
+  background: #f4f7fb;
+  color: #334155;
+  font-weight: 700;
+}
+
+body.jp-Notebook .jp-RenderedHTMLCommon table tbody tr:nth-child(even),
+body.jp-Notebook .jp-RenderedHTMLCommon table.dataframe tbody tr:nth-child(even) {
+  background: #fafcff;
+}
+
+body.jp-Notebook img,
+body.jp-Notebook svg {
+  max-width: 100%;
+}
+
+body.jp-Notebook .jp-OutputArea-output img {
+  display: block;
+  margin: 8px auto 0;
+  border-radius: 16px;
+  border: 1px solid #dfe7f0;
+  background: #fff;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+body.jp-Notebook .jp-MarkdownOutput blockquote {
+  margin: 1rem 0;
+  padding: 0.7rem 1rem;
+  border-left: 4px solid rgba(243, 119, 38, 0.55);
+  background: var(--report-accent-soft);
+  color: #6b4e2e;
+}
+
+body.jp-Notebook .jp-MarkdownOutput hr {
+  border: 0;
+  border-top: 1px solid #e5ebf2;
+  margin: 2rem 0;
+}
+
+body.jp-Notebook .jp-MarkdownOutput a,
+body.jp-Notebook .jp-RenderedHTMLCommon a {
+  color: var(--report-link);
+}
+
+body.jp-Notebook .jp-MarkdownOutput .anchor-link {
+  text-decoration: none;
+  opacity: 0;
+  margin-left: 0.35rem;
+  color: #94a3b8;
+}
+
+body.jp-Notebook .jp-MarkdownOutput :is(h1, h2, h3, h4, h5, h6):hover .anchor-link {
+  opacity: 0.5;
+}
+
+@media (max-width: 900px) {
+  body.jp-Notebook {
+    padding: 20px 0 48px;
+  }
+
+  body.jp-Notebook main {
+    padding: 0 14px;
+  }
+
+  body.jp-Notebook .jp-MarkdownCell .jp-InputArea,
+  body.jp-Notebook .jp-CodeCell .jp-Cell-outputWrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  body.jp-Notebook .jp-MarkdownCell:first-of-type .jp-InputArea {
+    padding: 24px 20px;
+  }
+}
